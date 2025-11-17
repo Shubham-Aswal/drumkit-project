@@ -3,86 +3,100 @@
     padding: 0;
     box-sizing: border-box;
     font-family:"Momo Signature";
-    color: white;
-    color:cornflowerblue;
+    color: cornflowerblue;
 }
+
+/* ---------- PAGE LAYOUT ----------- */
 body{
     background-image: url(./images/anime-girl-playing-drums-kimono.jpg);
     background-size: cover;
-    height: 80vh;
+    background-position: center;
+    height: 100vh;
     width: 100vw;
     background-attachment: fixed;
+
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-end;
-    gap: 70px;
+    padding-right: 120px; /* keeps buttons at right side consistently */
+    gap: 50px;
 }
+
 h1{
-    margin: 31px 50px 0 0;
+    margin-top: 25px;
+    margin-right: 20px;
+    font-size: 42px;
 }
-/* set - buttons  */
+
+/* ---------- DRUM GRID ---------- */
 .set{
-    display: flex;
-    gap: 40px;
-    /* background-color: blueviolet; */
-    flex-wrap: wrap;
-    margin-right: 200px;
-    height: 400px;
-    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 35px;
 }
-.set .drum{
-    height: 100px;
-    width: 100px;
+
+/* ---------- DRUM BUTTONS ---------- */
+.drum {
+    height: 120px;
+    width: 120px;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+
+    border-radius: 12px;
     font-weight: 800;
-    font-size: 30px;
-    border: 1px solid white;
+    font-size: 35px;
+    color: #3958ff;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+
+    transition: 0.15s ease;
+    backdrop-filter: blur(2px);
 }
-.W{
+
+/* Hover effect */
+.drum:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(255,255,255,0.8);
+}
+
+/* Click animation */
+.press {
+    transform: scale(0.92);
+    opacity: 0.6;
+    box-shadow: 0 0 25px cyan;
+}
+
+/* ---------- INDIVIDUAL DRUM IMAGES ---------- */
+.w{
     background-image: url(./images/tom1.png);
-    height: 100%;
-    width: 100%;
-  
 }
-.A{
+.a{
     background-image: url(./images/tom2.png);
-    object-fit: cover;
 }
-.S{
+.s{
     background-image: url(./images/tom3.png);
 }
-.D{
+.d{
     background-image: url(./images/tom4.png);
 }
-
-.J{
+.j{
     background-image: url(./images/snare.png);
 }
-.K{
+.k{
     background-image: url(./images/crash.png);
-    object-fit: cover;
 }
-
-.L{
+.l{
     background-image: url(./images/kick.png);
-    object-fit: cover;
-}
-.q.drum{
-    font-size: 10px;
-}
-.drum.devspc{
-    display: flex;
-    font-size: 12px;
-    justify-content: center;
-    align-items: center;
-
 }
 
-.press{
-    box-shadow: 0 3px 4px 0 #dbedef;
-    opacity: 0.5;
+.q.drum {
+    font-size: 14px;
+    padding: 6px;
 }
